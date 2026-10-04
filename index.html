@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consultorías ANPA | Acompañamiento contable y digital</title>
+
+
+    <!-- FUENTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* ==============================
+           CONFIGURACIÓN GENERAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #173b56;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           COLORES
+        ============================== */
+
+        :root {
+
+            --azul: #173b56;
+
+            --azul-claro: #245b78;
+
+            --verde: #159b78;
+
+            --verde-claro: #dff5ed;
+
+            --menta: #edf9f5;
+
+            --blanco: #ffffff;
+
+            --gris: #667781;
+
+            --gris-claro: #f5f8f9;
+
+        }
+
+
+        /* ==============================
+           BOTONES
+        ============================== */
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 15px 25px;
+
+            border-radius: 35px;
+
+            background: var(--verde);
+
+            color: white;
+
+            font-weight: 700;
+
+            transition: all .3s ease;
+
+            box-shadow: 0 8px 20px rgba(21,155,120,.20);
+
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            background: #0e8364;
+
+            box-shadow: 0 12px 25px rgba(21,155,120,.30);
+
+        }
+
+
+        .btn i {
+
+            font-size: 20px;
+
+        }
+
+
+        /* ==============================
+           MENÚ
+        ============================== */
+
+        header {
+
+            width: 100%;
+
+            background: rgba(255,255,255,.97);
+
+            border-bottom: 1px solid #edf0f2;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+        }
+
+
+        .navbar {
+
+            width: 90%;
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            min-height: 75px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--azul);
+
+        }
+
+
+        .logo-icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 12px;
+
+            background: var(--verde-claro);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: var(--verde);
+
+            font-size: 23px;
+
+        }
+
+
+        .logo-text {
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            line-height: 1.1;
+
+        }
+
+
+        .logo-text span {
+
+            color: var(--verde);
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        nav a {
+
+            color: var(--azul);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: var(--verde);
+
+        }
+
+
+        .nav-btn {
+
+            padding: 11px 18px;
+
+            color: white !important;
+
+            background: var(--verde);
+
+            border-radius: 25px;
+
+        }
+
+
+        /* ==============================
+           PORTADA
+        ============================== */
+
+        .hero {
+
+            min-height: 650px;
+
+            background: linear-gradient(
+                110deg,
+                #f5faf8 0%,
+                #ffffff 55%
+            );
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            overflow: hidden;
+
+        }
+
+
+        .hero-content {
+
+            padding: 70px 8%;
+
+            max-width: 700px;
+
+            margin-left: auto;
+
+        }
+
+
+        .mini-title {
+
+            color: var(--verde);
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+
+            font-size: 16px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(38px, 5vw, 62px);
+
+            line-height: 1.08;
+
+            color: var(--azul);
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .hero h1 span {
+
+            color: var(--verde);
+
+        }
+
+
+        .hero-description {
+
+            font-size: 18px;
+
+            color: var(--gris);
+
+            max-width: 600px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .hero-image {
+
+            height: 650px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .hero-image img {
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .hero-image::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: -80px;
+
+            top: -20px;
+
+            width: 160px;
+
+            height: 720px;
+
+            background: #ffffff;
+
+            border-radius: 50%;
+
+            z-index: 2;
+
+        }
+
+
+        .hero-tag {
+
+            position: absolute;
+
+            right: 35px;
+
+            bottom: 35px;
+
+            z-index: 3;
+
+            background: rgba(255,255,255,.95);
+
+            padding: 18px 22px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+            font-weight: 700;
+
+            color: var(--azul);
+
+        }
+
+
+        /* ==============================
+           SECCIONES
+        ============================== */
+
+        section {
+
+            padding: 85px 8%;
+
+        }
+
+
+        .section-header {
+
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 50px;
+
+        }
+
+
+        .section-header h2 {
+
+            font-size: 38px;
+
+            color: var(--azul);
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .section-header p {
+
+            color: var(--gris);
+
+            font-size: 17px;
+
+        }
+
+
+        /* ==============================
+           PROBLEMA
+        ============================== */
+
+        .problem {
+
+            background: white;
+
+        }
+
+
+        .problem-content {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+        }
+
+
+        .problem-image {
+
+            height: 360px;
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+        }
+
+
+        .problem-image img {
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .problem-text {
+
+            padding: 20px;
+
+        }
+
+
+        .problem-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            border-radius: 50%;
+
+            background: #fff0ed;
+
+            color: #d85c4b;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 27px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .problem-text h3 {
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+            color: var(--azul);
+
+        }
+
+
+        .problem-text p {
+
+            color: var(--gris);
+
+            font-size: 17px;
+
+        }
+
+
+        /* ==============================
+           SERVICIOS
+        ============================== */
+
+        .services {
+
+            background: var(--menta);
+
+        }
+
+
+        .services-grid {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .service-card {
+
+            background: white;
+
+            padding: 30px 20px;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            border: 1px solid #e6f1ed;
+
+            transition: .3s;
+
+        }
+
+
+        .service-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 15px 30px rgba(23,59,86,.10);
+
+        }
+
+
+        .service-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            margin: auto auto 18px;
+
+            background: var(--verde-claro);
+
+            color: var(--verde);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+
+        }
+
+
+        .service-card h3 {
+
+            font-size: 16px;
+
+            color: var(--azul);
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .service-card p {
+
+            color: var(--gris);
+
+            font-size: 13px;
+
+        }
+
+
+        /* ==============================
+           PÚBLICO OBJETIVO
+        ============================== */
+
+        .target {
+
+            padding: 0;
+
+            background: var(--azul);
+
+            color: white;
+
+        }
+
+
+        .target-content {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            min-height: 430px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+        }
+
+
+        .target-image {
+
+            height: 430px;
+
+        }
+
+
+        .target-image img {
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .target-text {
+
+            padding: 50px 8%;
+
+        }
+
+
+        .target-text h2 {
+
+            font-size: 37px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .target-text p {
+
+            font-size: 18px;
+
+            color: #dce9ef;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .location-tags {
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .location {
+
+            padding: 10px 18px;
+
+            background: rgba(255,255,255,.12);
+
+            border: 1px solid rgba(255,255,255,.2);
+
+            border-radius: 25px;
+
+        }
+
+
+        /* ==============================
+           BENEFICIOS
+        ============================== */
+
+        .benefits {
+
+            background: white;
+
+        }
+
+
+        .benefits-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .benefit-card {
+
+            background: #f7fafb;
+
+            padding: 25px 18px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            transition: .3s;
+
+        }
+
+
+        .benefit-card:hover {
+
+            background: var(--verde-claro);
+
+        }
+
+
+        .benefit-card i {
+
+            color: var(--verde);
+
+            font-size: 27px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .benefit-card p {
+
+            font-weight: 700;
+
+            font-size: 14px;
+
+            color: var(--azul);
+
+        }
+
+
+        /* ==============================
+           DIFERENCIAL
+        ============================== */
+
+        .difference {
+
+            background: #eef7fb;
+
+        }
+
+
+        .difference-content {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: .9fr 1.1fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+        }
+
+
+        .difference-image {
+
+            height: 390px;
+
+            overflow: hidden;
+
+            border-radius: 25px;
+
+        }
+
+
+        .difference-image img {
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .difference-text h2 {
+
+            font-size: 38px;
+
+            color: var(--azul);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .difference-text h3 {
+
+            color: var(--verde);
+
+            font-size: 23px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .difference-text p {
+
+            color: var(--gris);
+
+            font-size: 17px;
+
+        }
+
+
+        /* ==============================
+           CÓMO FUNCIONA
+        ============================== */
+
+        .process {
+
+            background: white;
+
+        }
+
+
+        .steps {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .step {
+
+            position: relative;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+        }
+
+
+        .step-number {
+
+            width: 60px;
+
+            height: 60px;
+
+            margin: auto auto 20px;
+
+            background: var(--verde);
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+            font-weight: 800;
+
+        }
+
+
+        .step i {
+
+            font-size: 22px;
+
+            color: var(--azul);
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .step h3 {
+
+            color: var(--azul);
+
+            font-size: 17px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .step p {
+
+            color: var(--gris);
+
+            font-size: 14px;
+
+        }
+
+
+        /* ==============================
+           LLAMADO A LA ACCIÓN
+        ============================== */
+
+        .cta {
+
+            padding: 0;
+
+            background: var(--azul);
+
+        }
+
+
+        .cta-content {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            min-height: 330px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+        }
+
+
+        .cta-image {
+
+            height: 330px;
+
+        }
+
+
+        .cta-image img {
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .cta-text {
+
+            padding: 45px 8%;
+
+            color: white;
+
+        }
+
+
+        .cta-text h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .cta-text p {
+
+            color: #dce9ef;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        /* ==============================
+           CONTACTO
+        ============================== */
+
+        .contact {
+
+            background: #f7fafb;
+
+            text-align: center;
+
+        }
+
+
+        .contact-card {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            box-shadow: 0 10px 35px rgba(23,59,86,.08);
+
+        }
+
+
+        .contact-logo {
+
+            width: 75px;
+
+            height: 75px;
+
+            background: var(--verde-claro);
+
+            color: var(--verde);
+
+            border-radius: 20px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 35px;
+
+        }
+
+
+        .contact-card h2 {
+
+            font-size: 30px;
+
+            color: var(--azul);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .contact-info {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+
+            margin: 25px 0;
+
+        }
+
+
+        .contact-info span {
+
+            color: var(--gris);
+
+        }
+
+
+        .contact-info i {
+
+            color: var(--verde);
+
+            margin-right: 7px;
+
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+
+            background: #102d43;
+
+            color: white;
+
+            padding: 30px 8%;
+
+            text-align: center;
+
+        }
+
+
+        footer p {
+
+            color: #b8cad4;
+
+            font-size: 13px;
+
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 10px;
+            }
+
+            .services-grid,
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            nav {
+                display: none;
+            }
+
+            .navbar {
+                justify-content: center;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                text-align: center;
+                padding: 60px 7%;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .hero-image::before {
+                display: none;
+            }
+
+            .problem-content,
+            .difference-content,
+            .target-content,
+            .cta-content {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-image,
+            .difference-image {
+                height: 300px;
+            }
+
+            .target-image {
+                height: 300px;
+            }
+
+            .cta-image {
+                height: 250px;
+            }
+
+            .services-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+
+            .section-header h2 {
+                font-size: 30px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .services-grid,
+            .benefits-grid,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .contact-card {
+                padding: 30px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     MENÚ DE NAVEGACIÓN
+================================================== -->
+
+<header>
+
+    <div class="navbar">
+
+
+        <a href="#inicio" class="logo">
+
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-store"></i>
+
+            </div>
+
+
+            <div class="logo-text">
+
+                Consultorías <span>ANPA</span>
+
+            </div>
+
+
+        </a>
+
+
+        <nav>
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#problema">
+                Problema
+            </a>
+
+            <a href="#servicios">
+                Servicios
+            </a>
+
+            <a href="#beneficios">
+                Beneficios
+            </a>
+
+            <a href="#diferencial">
+                Diferencial
+            </a>
+
+            <a href="#proceso">
+                Cómo funciona
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
+
+
+            <a class="nav-btn"
+               href="https://wa.me/573000000000"
+               target="_blank">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Organizar mi tienda
+
+            </a>
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- ==================================================
+     PORTADA
+================================================== -->
+
+<section class="hero" id="inicio">
+
+
+    <div class="hero-content">
+
+
+        <div class="mini-title">
+
+            CONSULTORÍAS ANPA
+
+        </div>
+
+
+        <h1>
+
+            Acompañamiento
+                  contable y digital para
+
+            <span>
+                tiendas de barrio.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Te ayudamos a organizar las cuentas de tu tienda,
+
+            controlar tus ingresos y gastos y conocer mejor
+
+            las ganancias de tu negocio.
+
+        </p>
+
+
+        <a class="btn"
+           href="https://wa.me/573000000000"
+           target="_blank">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Quiero organizar mi tienda
+
+        </a>
+
+
+    </div>
+
+
+   <div class="hero-image">
+
+    <!-- IMAGEN DE PORTADA -->
+
+    <img
+        src="ACOMPAÑAMIENTO.jpg"
+        alt="Acompañamiento contable">
+
+    <div class="hero-tag">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Tu negocio también importa
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     PROBLEMA
+================================================== -->
+
+<section class="problem" id="problema">
+
+
+    <div class="section-header">
+
+
+        <h2>
+            El problema
+        </h2>
+
+
+        <p>
+
+            Sabemos que administrar una tienda de barrio
+
+            puede ser un reto.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="problem-content">
+
+
+        <div class="problem-image">
+
+
+            <!-- IMAGEN CONTABLE QUE ENVIASTE -->
+
+            <img
+                src="https://www.atsgestion.net/wp-content/uploads/2021/02/Manejo-de-los-documentos-Contables-y-Financieros-de-una-organizaci%C3%B3n.jpg"
+                alt="Documentos contables y financieros">
+
+
+        </div>
+
+
+        <div class="problem-text">
+
+
+            <div class="problem-icon">
+
+                <i class="fa-solid fa-file-invoice"></i>
+
+            </div>
+
+
+            <h3>
+
+                ¿Qué está pasando?
+
+            </h3>
+
+
+            <p>
+
+                Muchos tenderos llevan sus cuentas manualmente
+
+                y no tienen claridad sobre sus
+
+                <strong>
+
+                    ingresos, gastos, inventario y ganancias.
+
+                </strong>
+
+
+                Esto puede dificultar la toma de decisiones
+
+                y limitar el crecimiento del negocio.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     SERVICIOS
+================================================== -->
+
+<section class="services" id="servicios">
+
+
+    <div class="section-header">
+
+
+        <h2>
+
+            ¿Qué ofrecemos?
+
+        </h2>
+
+
+        <p>
+
+            Soluciones sencillas para ayudarte a tener
+
+            mayor control sobre tu negocio.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <div class="service-card">
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-coins"></i>
+
+            </div>
+
+
+            <h3>
+
+                Organización de ingresos y gastos
+
+            </h3>
+
+
+            <p>
+
+                Te ayudamos a ordenar la información
+
+                financiera de tu tienda.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="service-card">
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+            </div>
+
+
+            <h3>
+
+                Control básico de inventario
+
+            </h3>
+
+
+            <p>
+
+                 Lleva un control sencillo de tus
+
+                productos y existencias.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="service-card">
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+            </div>
+
+
+            <h3>
+
+                Acompañamiento contable
+
+            </h3>
+
+
+            <p>
+
+                Recibe orientación para comprender
+
+                mejor las cuentas de tu negocio.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="service-card">
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-laptop"></i>
+
+            </div>
+
+
+            <h3>
+
+                Herramientas digitales sencillas
+
+            </h3>
+
+
+            <p>
+
+                Utilizamos herramientas fáciles de
+
+                entender y utilizar.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="service-card">
+
+
+            <div class="service-icon">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+            </div>
+
+
+            <h3>
+
+                Atención por WhatsApp
+
+            </h3>
+
+
+            <p>
+
+                Recibe asesoría cercana sin necesidad
+
+                de desplazarte.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     PÚBLICO OBJETIVO
+================================================== -->
+
+<section class="target">
+
+
+    <div class="target-content">
+
+
+        <div class="target-image">
+
+
+            <!-- IMAGEN LOCAL -->
+
+            <img
+                src="TIENDAS.jpg"
+                alt="Tienda de barrio">
+
+
+        </div>
+
+
+        <div class="target-text">
+
+
+            <h2>
+
+                ¿A quién va dirigido?
+
+            </h2>
+
+
+            <p>
+
+                A propietarios de
+
+                <strong>
+
+                    tiendas de barrio de Engativá
+
+                    y Fontibón, Bogotá
+
+                </strong>
+
+                que buscan organizar mejor sus negocios
+
+                y tomar decisiones con mayor seguridad.
+
+            </p>
+
+
+            <div class="location-tags">
+
+
+                <div class="location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Engativá
+
+                </div>
+
+
+                <div class="location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Fontibón
+
+                </div>
+
+
+                <div class="location">
+
+                    <i class="fa-solid fa-city"></i>
+
+                    Bogotá D.C.
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     BENEFICIOS
+================================================== -->
+
+<section class="benefits" id="beneficios">
+
+
+    <div class="section-header">
+
+
+        <h2>
+
+            Beneficios
+
+        </h2>
+
+
+        <p>
+
+            Pequeños cambios pueden generar grandes
+
+            resultados para tu negocio.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="benefits-grid">
+
+
+        <div class="benefit-card">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <p>
+
+                Organizar mejor las cuentas
+
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <i class="fa-solid fa-money-bill-trend-up"></i>
+
+            <p>
+
+                Conocer cuánto realmente gana el negocio
+
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <i class="fa-regular fa-clock"></i>
+
+            <p>
+
+                Ahorrar tiempo
+
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <p>
+
+                Tener mayor control del negocio
+
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <i class="fa-solid fa-handshake"></i>
+
+            <p>
+
+                Recibir acompañamiento sencillo y cercano
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     DIFERENCIAL
+================================================== -->
+
+<section class="difference" id="diferencial">
+
+
+    <div class="difference-content">
+
+
+        <div class="difference-image">
+
+
+            <!-- IMAGEN LOCAL -->
+
+            <img
+                src="DIFERENCIA.jpg"
+                alt="Herramientas digitales para tiendas">
+
+
+        </div>
+
+
+        <div class="difference-text">
+
+
+            <h2>
+
+                ¿Qué nos diferencia?
+
+            </h2>
+
+
+            <h3>
+
+                <i class="fa-solid fa-hand-holding-heart"></i>
+
+                No solo entregamos una herramienta.
+
+            </h3>
+
+
+            <p>
+
+                En <strong>Consultorías ANPA</strong> acompañamos
+
+                al tendero durante todo el proceso.
+
+
+                Te explicamos paso a paso cómo utilizar las
+
+                herramientas y brindamos seguimiento para que
+
+                realmente puedas aprovecharlas.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     CÓMO FUNCIONA
+================================================== -->
+
+<section class="process" id="proceso">
+
+
+    <div class="section-header">
+
+
+        <h2>
+
+            ¿Cómo funciona?
+
+        </h2>
+
+
+        <p>
+
+            Nuestro proceso es sencillo y pensado para las
+
+            necesidades de cada tienda.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+
+            <div class="step-number">
+
+                1
+
+            </div>
+
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+
+            <h3>
+
+                Conocemos el negocio
+
+            </h3>
+
+
+            <p>
+
+                Escuchamos cómo funciona actualmente
+
+                tu tienda.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="step">
+
+
+            <div class="step-number">
+
+                2
+
+            </div>
+
+
+            <i class="fa-solid fa-bullseye"></i>
+
+
+            <h3>
+
+                Identificamos tus necesidades
+
+            </h3>
+
+
+            <p>
+
+                Encontramos los aspectos que
+
+                necesitas mejorar.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="step">
+
+
+            <div class="step-number">
+
+                3
+
+            </div>
+
+
+            <i class="fa-solid fa-laptop"></i>
+
+
+            <h3>
+
+                Proponemos una herramienta sencilla
+
+            </h3>
+
+
+            <p>
+
+                Elegimos una solución adecuada
+
+                para tu negocio.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="step">
+
+
+            <div class="step-number">
+
+                4
+
+            </div>
+
+
+            <i class="fa-solid fa-people-arrows"></i>
+
+
+            <h3>
+
+                Acompañamos y hacemos seguimiento
+
+            </h3>
+
+
+            <p>
+
+                Te enseñamos a utilizarla y
+
+                seguimos acompañando el proceso.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     LLAMADO A LA ACCIÓN
+================================================== -->
+
+<section class="cta">
+
+
+    <div class="cta-content">
+
+
+        <div class="cta-image">
+
+
+            <!-- USAMOS -->
+
+            <img
+                src="PRIMER.jpg"
+                alt="Herramientas digitales para el negocio">
+
+
+        </div>
+
+
+        <div class="cta-text">
+
+
+            <h2>
+
+                ¿Listo para organizar tu tienda?
+
+            </h2>
+
+
+            <p>
+
+                Da el primer paso y recibe acompañamiento
+
+                para mejorar la organización de tu negocio.
+
+            </p>
+
+
+            <a class="btn"
+
+               href="https://wa.me/573000000000"
+
+               target="_blank">
+
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Quiero organizar mi tienda
+
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     CONTACTO
+================================================== -->
+
+<section class="contact" id="contacto">
+
+
+    <div class="contact-card">
+
+
+        <div class="contact-logo">
+
+            <i class="fa-solid fa-store"></i>
+
+        </div>
+
+
+        <h2>
+
+            Consultorías ANPA
+
+        </h2>
+
+
+        <p>
+
+            Acompañamiento contable y digital
+
+            para tiendas de barrio.
+
+        </p>
+
+
+        <div class="contact-info">
+
+
+            <span>
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                WhatsApp
+
+            </span>
+
+
+            <span>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Bogotá D.C.
+
+            </span>
+
+
+        </div>
+
+
+        <a class="btn"
+
+           href="https://wa.me/573000000000"
+
+           target="_blank">
+
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Hablar por WhatsApp
+
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+
+    <p>
+
+        © 2026 Consultorías ANPA ·
+
+        Acompañamiento contable y digital para tiendas de barrio.
+
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>
+```
